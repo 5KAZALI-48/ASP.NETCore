@@ -27,28 +27,23 @@ namespace EmployeeManagement
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //First Middleware
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
             //Since we run our project in VS it uses iisexpress in default
+            //Second Middleware
+            app.Use(async (context, next) =>
+            {
+                await context.Response.WriteAsync("Hello from 1st middleware\n");
+                await next();
+            });
+
             app.Run(async (context) =>
             {
-            //await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
-            //Also we can check that froum laucngSettings.json file 
-            /*"profiles": {
-                "IIS Express": {
-                    "commandName": "IISExpress",
-                     "launchBrowser": true,
-                        "environmentVariables": {
-                        "ASPNETCORE_ENVIRONMENT": "Development"
-                }
-            },
-            */
-
-             await context.Response
-             .WriteAsync(_config["MyKey"]);
+                await context.Response.WriteAsync("Hello from 2nd middleware");
             });
         }
     }
