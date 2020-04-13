@@ -26,34 +26,19 @@ namespace EmployeeManagement
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             //First Middleware
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            //Since we run our project in VS it uses iisexpress in default
-            //Second Middleware
-            app.Use(async (context, next) =>
-            {
-                logger.LogInformation("MW1: Incoming Request");
-                await next(); //calling also next middleware
-                logger.LogInformation("MW1: Outgoing Response");
-            });
-
-            app.Use(async (context, next) =>
-            {
-                logger.LogInformation("MW2: Incoming Request");
-                await next(); //calling also next middleware
-                logger.LogInformation("MW2: Outgoing Response");
-            });
-
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("M3: Request handled and response produced");
-                logger.LogInformation("MW3: Request handled and response produced");
+                await context.Response.WriteAsync("Hello World");
             });
         }
     }
