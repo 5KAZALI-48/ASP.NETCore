@@ -38,7 +38,7 @@ namespace EmployeeManagement
             app.Use(async (context, next) =>
             {
                 await context.Response.WriteAsync("Hello from 1st middleware\n");
-                await next();
+                await next(); //calling also next middleware
             });
 
             app.Run(async (context) =>
