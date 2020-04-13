@@ -28,8 +28,19 @@ namespace EmployeeManagement
             //Since we run our project in VS it uses iisexpress in default
             app.Run(async (context) =>
             {
-                //await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
-                await context.Response.WriteAsync("Hello World!!!");
+            //await context.Response.WriteAsync(System.Diagnostics.Process.GetCurrentProcess().ProcessName);
+            //Also we can check that froum laucngSettings.json file 
+            /*"profiles": {
+                "IIS Express": {
+                    "commandName": "IISExpress",
+                     "launchBrowser": true,
+                        "environmentVariables": {
+                        "ASPNETCORE_ENVIRONMENT": "Development"
+                }
+            },
+            */
+
+             await context.Response.WriteAsync("Hello World!!!");
             });
         }
     }
