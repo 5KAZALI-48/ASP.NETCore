@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
-    public class HomeController
+    public class HomeController : Controller
     {
         //when https://localhost:44339/ arrives 
         //app.UseMvcWithDefaultRoute() middleware will find homecontroller
         //then executes default action and returns the response from this
         //action method
-        public string Index()
+        public JsonResult Index()
         {
-            return "Hello from MVC!!!";
+            //Returning Jsondata
+            //EXPECTED OUTPUT: {"id":1,"name":"Beskazali"}
+            return Json(new { id = 1, name = "Beskazali" }) ; 
         }
     }
 }
