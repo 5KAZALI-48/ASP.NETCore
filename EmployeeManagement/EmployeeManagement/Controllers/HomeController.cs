@@ -24,10 +24,8 @@ namespace EmployeeManagement.Controllers
         public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            //We use dynmaic properties with the ViewBag
-            ViewBag.Employee = model;
             ViewBag.PageTitle = "Employee Details";
-            return View();
+            return View(model);
         }
     }
 }
