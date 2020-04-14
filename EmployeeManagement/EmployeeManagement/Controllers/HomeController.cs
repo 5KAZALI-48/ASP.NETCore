@@ -24,11 +24,9 @@ namespace EmployeeManagement.Controllers
         public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            //ViewData["Employee"] = model
-            //ViewData["Page Title"] = "Employee Details";
-            //We want to Access these data from Details.cshtml from /Views/Home Folder
-            ViewData["Employee"] = model;
-            ViewData["Page Title"] = "Employee Details";
+            //We use dynmaic properties with the ViewBag
+            ViewBag.Employee = model;
+            ViewBag.PageTitle = "Employee Details";
             return View();
         }
     }
