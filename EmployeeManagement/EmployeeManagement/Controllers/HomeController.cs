@@ -33,8 +33,6 @@ namespace EmployeeManagement.Controllers
                 PageTitle = "Employee Details"
 
             };
-            //Expect an error at his point because The model item is in type HomeDetailsViewModel
-            //ViewDataDictionary instance requires a model item of type EmployeeManagement.Model.Employee
             return View(homeDetailsViewModel);
         }
 
