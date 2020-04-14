@@ -25,4 +25,3 @@ C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManag
 C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\EmployeeManagement.RazorTargetAssemblyInfo.cs
 C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\EmployeeManagement.Views.pdb
 C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\EmployeeManagement.csproj.CopyComplete
-C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Home\Test.cshtml.g.cs

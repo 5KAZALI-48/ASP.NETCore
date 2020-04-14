@@ -24,9 +24,12 @@ namespace EmployeeManagement.Controllers
         public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            //Using Overloaded version of view method to to display Test.cshtml
-            //Note that we did not use .cshtml extention
-            return View("Test");
+            //ViewData["Employee"] = model
+            //ViewData["Page Title"] = "Employee Details";
+            //We want to Access these data from Details.cshtml from /Views/Home Folder
+            ViewData["Employee"] = model;
+            ViewData["Page Title"] = "Employee Details";
+            return View();
         }
     }
 }
