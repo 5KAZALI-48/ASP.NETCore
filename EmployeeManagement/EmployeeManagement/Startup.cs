@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,9 @@ namespace EmployeeManagement
         {
             //ADDS only Mvc Core Services, but AddMvc() method adds all required MVC Services
             services.AddMvc();
+            //When Irepository service is requested create an instance of MocEmployeeRepository instance
+            //Then Inject that instance 
+            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
