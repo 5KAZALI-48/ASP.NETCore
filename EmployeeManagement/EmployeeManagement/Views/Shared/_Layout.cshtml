@@ -8,8 +8,14 @@
 <body>
     <div>
         @RenderBody()
-    </div> 
-    @RenderSection("Scripts",false)
+    </div>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", true)
+    }
+
+
+
 </body>
 </html>
  
