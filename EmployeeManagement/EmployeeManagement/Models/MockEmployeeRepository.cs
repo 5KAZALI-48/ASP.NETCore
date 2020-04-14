@@ -12,6 +12,7 @@ namespace EmployeeManagement.Models
         {
             _employeeList = new List<Employee>()
             {
+                //Manually creating the data... 
                 new Employee() { Id = 1, Name = "Mary", Department = "HR", Email = "mary@gmail.com" },
                 new Employee() { Id = 2, Name = "John", Department = "IT", Email = "john@gmail.com" },
                 new Employee() { Id = 3, Name = "Sam", Department = "IT", Email = "sam@gmail.com" },
