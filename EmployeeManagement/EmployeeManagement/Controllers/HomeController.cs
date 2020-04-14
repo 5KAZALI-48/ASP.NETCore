@@ -37,5 +37,10 @@ namespace EmployeeManagement.Controllers
             //ViewDataDictionary instance requires a model item of type EmployeeManagement.Model.Employee
             return View(homeDetailsViewModel);
         }
+
+        public ViewResult Create()
+        {
+            return View();
+        }
     }
 }
