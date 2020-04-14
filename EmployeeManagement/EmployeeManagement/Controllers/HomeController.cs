@@ -21,10 +21,10 @@ namespace EmployeeManagement.Controllers
         {
            return _employeeRepository.GetEmployee(1).Name;
         }
-        public JsonResult Details()
+        public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            return Json(model);
+            return View(model);
         }
     }
 }

@@ -25,9 +25,7 @@ namespace EmployeeManagement
         public void ConfigureServices(IServiceCollection services)
         {
             //ADDS only Mvc Core Services, but AddMvc() method adds all required MVC Services
-            services.AddMvc();
-            //When Irepository service is requested create an instance of MocEmployeeRepository instance
-            //Then Inject that instance 
+            services.AddMvc().AddXmlSerializerFormatters();
             services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
         }
 
