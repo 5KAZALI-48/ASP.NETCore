@@ -9,7 +9,7 @@ namespace EmployeeManagement.Controllers
 {
     public class HomeController : Controller
     {
-        private IEmployeeRepository _employeeRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
         //Using constructor to inject IEmployeeRepository
         //Constructor Injection expect an error...
@@ -20,6 +20,11 @@ namespace EmployeeManagement.Controllers
         public string Index()
         {
            return _employeeRepository.GetEmployee(1).Name;
+        }
+        public JsonResult Details()
+        {
+            Employee model = _employeeRepository.GetEmployee(1);
+            return Json(model);
         }
     }
 }
