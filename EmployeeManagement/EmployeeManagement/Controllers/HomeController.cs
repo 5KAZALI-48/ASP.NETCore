@@ -12,7 +12,7 @@ namespace EmployeeManagement.Controllers
         private IEmployeeRepository _employeeRepository;
 
         //Using constructor to inject IEmployeeRepository
-        //Constructor Injection expect an error
+        //Constructor Injection expect an error...
         public HomeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
