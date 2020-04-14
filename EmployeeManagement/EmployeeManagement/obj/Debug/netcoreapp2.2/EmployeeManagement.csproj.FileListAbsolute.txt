@@ -26,3 +26,4 @@ C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManag
 C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\EmployeeManagement.csproj.CopyComplete
 C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\EmployeeManagement.csprojAssemblyReference.cache
 C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\fkara\source\repos\5KAZALI\ASP.NETCore\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
