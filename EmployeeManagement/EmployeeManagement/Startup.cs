@@ -24,7 +24,7 @@ namespace EmployeeManagement
         public void ConfigureServices(IServiceCollection services)
         {
             //ADDS only Mvc Core Services, but AddMvc() method adds all required MVC Services
-            services.AddMvcCore();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
