@@ -24,7 +24,9 @@ namespace EmployeeManagement.Controllers
         public ViewResult Details()
         {
             Employee model = _employeeRepository.GetEmployee(1);
-            return View(model);
+            //Using Overloaded version of view method to to display Test.cshtml
+            //Note that we did not use .cshtml extention
+            return View("Test");
         }
     }
 }
