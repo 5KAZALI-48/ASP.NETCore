@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
     public class HomeController : Controller
     {
-        //when https://localhost:44339/ arrives 
-        //app.UseMvcWithDefaultRoute() middleware will find homecontroller
-        //then executes default action and returns the response from this
-        //action method
-        public JsonResult Index()
+        private IEmployeeRepository _employeeRepository;
+
+        //Using constructor to inject IEmployeeRepository
+        //Constructor Injection expect an error
+        public HomeController(IEmployeeRepository employeeRepository)
         {
-            //Returning Jsondata
-            //EXPECTED OUTPUT: {"id":1,"name":"Beskazali"}
-            return Json(new { id = 1, name = "Beskazali" }) ; 
+            _employeeRepository = employeeRepository;
+        }
+        public string Index()
+        {
+           return _employeeRepository.GetEmployee(1).Name;
         }
     }
 }
