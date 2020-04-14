@@ -8,27 +8,26 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
 
-        //Using constructor to inject IEmployeeRepository
-        //Constructor Injection expect an error...
+        
         public HomeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
 
-        [Route("")]
-        [Route("/Home")]
-        [Route("/Home/Index")]
+        [Route("~/Home")]
+        [Route("~/")]
         public ViewResult Index()
         {
             var model =_employeeRepository.GetAllEmployee();
             return View(model);
         }
 
-        [Route("Home/Details/{id?}")]
+        [Route("[action]/{id?}")]
         public ViewResult Details(int? id)
         {
             HomeDetailsViewModel homeDetailsViewModel = new HomeDetailsViewModel()
