@@ -26,7 +26,7 @@ namespace EmployeeManagement
         {
             //ADDS only Mvc Core Services, but AddMvc() method adds all required MVC Services
             services.AddMvc().AddXmlSerializerFormatters();
-            services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+            services.AddTransient<IEmployeeRepository, MockEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
