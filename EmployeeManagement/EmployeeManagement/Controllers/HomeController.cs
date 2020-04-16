@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
- 
     public class HomeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
