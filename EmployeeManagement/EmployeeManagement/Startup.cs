@@ -30,7 +30,7 @@ namespace EmployeeManagement
             //Conceptually similar to ADO.NET pooling
             //Better performance than AddDbContext()
             //No need to create a new instance 
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer());
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(_config.GetConnectionString("EmployeeDBConnection")));
 
             services.AddMvc().AddXmlSerializerFormatters();
             services.AddTransient<IEmployeeRepository, MockEmployeeRepository>();
