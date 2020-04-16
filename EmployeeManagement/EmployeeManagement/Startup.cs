@@ -6,9 +6,11 @@ using EmployeeManagement.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement
 {
@@ -24,7 +26,12 @@ namespace EmployeeManagement
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //ADDS only Mvc Core Services, but AddMvc() method adds all required MVC Services
+            //Register AppDbContext application specific class with dependency injectio with IServiceCollection Interface
+            //Conceptually similar to ADO.NET pooling
+            //Better performance than AddDbContext()
+            //No need to create a new instance 
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer());
+
             services.AddMvc().AddXmlSerializerFormatters();
             services.AddTransient<IEmployeeRepository, MockEmployeeRepository>();
         }
