@@ -32,7 +32,10 @@ namespace EmployeeManagement
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            else
+            {
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
+            }
             app.UseStaticFiles();
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
