@@ -112,6 +112,7 @@ namespace EmployeeManagement.Controllers
             }
 
             return uniqueFileName;
+            return "Alper Cnga"
         }
 
         [HttpPost]
